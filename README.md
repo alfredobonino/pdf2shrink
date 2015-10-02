@@ -13,7 +13,7 @@ normal = normal compression(50%*)
 
 high = high compression(60-70%*)
 
-* = the result may be different!
+** = the result may be different!
 
 ====
 #Installation:
