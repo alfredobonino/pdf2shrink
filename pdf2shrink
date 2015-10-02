@@ -7,7 +7,7 @@ if len(argv) > 1:
 		os.system("pdftops " + argv[2] + " temp.ps")
 		os.system("ps2pdf temp.ps " + argv[3])
 		os.system("rm temp.ps")
-	if argv[1] == "normal":
+	if argv[1] == "medium":
 		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
 	if argv[1] == "high":
 		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
@@ -25,7 +25,7 @@ if len(argv) > 1:
 		print("--------------------------------------------------------------------")
 		print("Levels of compression:")
 		print("low = low compression (20%*)")
-		print("normal = normal compression (50%*)")
+		print("medium = medium compression (50%*)")
 		print("high = high compression (60-70%*)")
 		print("* = the result may be different!")
 else:
@@ -42,6 +42,6 @@ else:
 	print("--------------------------------------------------------------------")
 	print("Levels of compression:")
 	print("low = low compression (20%*)")
-	print("normal = normal compression (50%*)")
+	print("medium = medium compression (50%*)")
 	print("high = high compression (60-70%*)")
 	print("* = the result may be different!")
