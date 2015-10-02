@@ -7,9 +7,10 @@ python3 pdf2shrink levelofcompression inputfile.pdf outputfile.pdf
 where levelofcompression is the level of compression
 
 Levels of compression:
+
 low = low compression(20%*)
 
-normal = normal compression(50%*)
+medium = normal compression(50%*)
 
 high = high compression(60-70%*)
 
@@ -19,5 +20,6 @@ high = high compression(60-70%*)
 #Installation:
 the program require pdftk and ghostscript.
 On ubuntu:
+
 sudo apt-get install pdftk ghostscript
 
