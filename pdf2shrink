@@ -2,33 +2,7 @@
 #Created by Alfredo Bonino Under the gpl3 license
 import os
 from sys import argv
-if len(argv) > 1:
-	if argv[1] == "low":
-		os.system("pdftops " + argv[2] + " temp.ps")
-		os.system("ps2pdf temp.ps " + argv[3])
-		os.system("rm temp.ps")
-	if argv[1] == "medium":
-		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
-	if argv[1] == "high":
-		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
-	if argv[1] == "help":
-		print("pdf2shrink - A simple utility for compress pdf files")
-		print("----------------------------------------------------")
-		print("Created by Alfredo Bonino")
-		print("The program require pdftk and ghostscript")
-		print("Under the GPL 3 License")
-		print("HELP")
-		print("---------\n")
-		print("Usage:\n")
-		print("pdf2shrink levelofcompression inputfile.pdf outputfile.pdf\n")
-		print("where levelofcompression are the level of compression of the pdf.")
-		print("--------------------------------------------------------------------")
-		print("Levels of compression:")
-		print("low = low compression (20%*)")
-		print("medium = medium compression (50%*)")
-		print("high = high compression (60-70%*)")
-		print("* = the result may be different!")
-else:
+def help():
 	print("pdf2shrink - A simple utility for compress pdf files")
 	print("----------------------------------------------------")
 	print("Created by Alfredo Bonino")
@@ -45,3 +19,16 @@ else:
 	print("medium = medium compression (50%*)")
 	print("high = high compression (60-70%*)")
 	print("* = the result may be different!")
+if len(argv) > 1:
+	if argv[1] == "low":
+		os.system("pdftops " + argv[2] + " temp.ps")
+		os.system("ps2pdf temp.ps " + argv[3])
+		os.system("rm temp.ps")
+	if argv[1] == "medium":
+		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
+	if argv[1] == "high":
+		os.system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=" + argv[3] + " " + argv[2])
+	if argv[1] == "help":
+		help()
+else:
+	help()
